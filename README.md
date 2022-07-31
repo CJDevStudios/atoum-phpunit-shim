@@ -11,7 +11,7 @@ Current Features/Support:
 
 | Feature                                      | Support | Notes |
 |----------------------------------------------|---------|-------|
-| afterDestructionOf                           | No      |       |
+| afterDestructionOf                           | Yes     |       |
 | array                                        | Yes     |       |
 | assert                                       | No      |       |
 | boolean                                      | Yes     |       |

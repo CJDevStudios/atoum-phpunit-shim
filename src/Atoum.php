@@ -47,6 +47,14 @@ class Atoum extends TestCase
         $this->markTestSkipped($message);
     }
 
+    public function afterDestructionOf(mixed $value): void
+    {
+        $this->assertIsObject($value);
+        $this->assertTrue(method_exists($value, '__destruct'));
+        // Call __destruct()
+        $value->__destruct();
+    }
+
     public function array(mixed $value): Asserter\ArrayAsserter
     {
         return new Asserter\ArrayAsserter($this, $value);
