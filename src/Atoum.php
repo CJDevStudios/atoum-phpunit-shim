@@ -55,6 +55,26 @@ class Atoum extends TestCase
         $value->__destruct();
     }
 
+    public function given($noop): static
+    {
+        return $this;
+    }
+
+    public function if($noop): static
+    {
+        return $this;
+    }
+
+    public function and($noop): static
+    {
+        return $this;
+    }
+
+    public function then($noop): static
+    {
+        return $this;
+    }
+
     public function array(mixed $value): Asserter\ArrayAsserter
     {
         return new Asserter\ArrayAsserter($this, $value);
