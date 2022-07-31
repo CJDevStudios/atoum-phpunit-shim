@@ -1,0 +1,29 @@
+{
+  "name": "cjdevstudios/atoum-phpunit-shim",
+  "description": "A shim to adapt existing Atoum tests to PHPUnit",
+  "license": "MIT",
+  "config": {
+    "platform": {
+      "php": "8.0"
+    }
+  },
+  "autoload": {
+    "files": [
+      "src/bootstrap.php"
+    ],
+    "psr-4": {
+      "CJDevStudios\\AtoumShim\\": "src/",
+      "CJDevStudios\\AtoumShim\\Test\\": "tests/"
+    }
+  },
+  "replace": {
+    "atoum/atoum": "~4.0.0"
+  },
+  "require": {
+    "php": "~8.0.0",
+    "phpunit/phpunit": "~9.5.21"
+  },
+  "scripts": {
+    "test": "phpunit --bootstrap src/bootstrap.php tests/"
+  }
+}
