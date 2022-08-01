@@ -75,6 +75,12 @@ class Atoum extends TestCase
         return $this;
     }
 
+    public function when(callable $callable): static
+    {
+        $callable();
+        return $this;
+    }
+
     public function array(mixed $value): Asserter\ArrayAsserter
     {
         return new Asserter\ArrayAsserter($this, $value);

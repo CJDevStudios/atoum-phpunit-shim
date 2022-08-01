@@ -40,4 +40,4 @@ Current Features/Support:
 | testedClass/testedInstance/newTestedInstance | No      |       |
 | utf8String                                   | Yes     |       |
 | variable                                     | Yes     |       |
-| when                                         | No      |       |
+| when                                         | Yes     |       |
