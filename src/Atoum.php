@@ -130,6 +130,11 @@ class Atoum extends TestCase
         return new Asserter\DateTimeAsserter($this, $value);
     }
 
+    public function error(mixed $value): Asserter\ErrorAsserter
+    {
+        return new Asserter\ErrorAsserter($this, $value);
+    }
+
     public function exception(mixed $value): Asserter\ExceptionAsserter
     {
         return new Asserter\ExceptionAsserter($this, $value);
