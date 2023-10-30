@@ -41,5 +41,8 @@ class AtoumTest extends Atoum
                 $test = 3;
             });
         $this::assertEquals(3, $test);
+
+        $this->given($test = 10)
+            ->then->integer($test)->isEqualTo(10);
     }
 }

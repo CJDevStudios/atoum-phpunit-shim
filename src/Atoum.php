@@ -7,6 +7,10 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @property object newTestedInstance
+ * @property static if
+ * @property static and
+ * @property static then
+ * @property static when
  */
 class Atoum extends TestCase
 {
@@ -21,11 +25,14 @@ class Atoum extends TestCase
 
     public function __get(string $name)
     {
+        $noop_props = ['if', 'and', 'then', 'when'];
         if ($name === 'newTestedInstance') {
             if ($this->test_class === null) {
                 return null;
             }
             $this->tested_instance = new $this->test_class;
+        } else if (in_array($name, $noop_props)) {
+            return $this;
         }
     }
 
@@ -35,6 +42,7 @@ class Atoum extends TestCase
 
     public function __isset(string $name): bool
     {
+        return $name === 'newTestedInstance';
     }
 
     public function getTestedInstance(): object
